@@ -2,19 +2,15 @@ def formattedtosecond(formatted, *args):
     """
     Takes a string that looks something like "00:33:24" and converts it to seconds.
     Returns false if input isn't not formatted correctly.
-    Allows for just seconds as well. For example, 2004 seconds (33:24).
+    Allows for just seconds as well. For example, 33:24 would be written as 2004
     Maximum of 23:59:59
     Add True as a second argument to see the reason for a string failing
     """
-    # Check for debug mode
     debug = False
     if len(args) > 0:
         if args[0] == True:
             debug = True
-
-    # Get values in between :
     parsed = formatted.split(":")
-
     # Check if the amount is more than just seconds
     if not len(parsed) == 1:
 
